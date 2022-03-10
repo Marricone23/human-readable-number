@@ -1,5 +1,5 @@
 module.exports = function toReadable (number) {
-let numbers = [
+let num = [
         "zero",
         "one",
         "two",
@@ -20,18 +20,25 @@ let numbers = [
         "seventeen",
         "eighteen",
         "nineteen",
-        "twenty",
-        "thirty",
-        "forty",
-        "fifty",
-        "sixty",
-        "seventy",
-        "eighty",
-        "ninety",
-        "hundred",
-        "thousand",
-        "million",
-        ]
+      ]
+
+
+let decimal = [
+  "twenty",
+  "thirty",
+  "forty",
+  "fifty",
+  "sixty",
+  "seventy",
+  "eighty",
+  "ninety",
+]        
+
+let num3 = [
+  "hundred",
+  "thousand",
+  "million",
+]
 
 
         let str = "";
@@ -39,27 +46,35 @@ let numbers = [
         let numberLength = newNumber.length;
 
 
-        if (numberLength < 2){
-          //  return (str = numbers[number]);
-            str = numbers[number];
+       if (numberLength < 2){
+          //  return (str = num[number]);
+            str = num[number];
             console.log(str);
 
         }
 
         if ( numberLength === 2 ){
-
+          if ( newNumber[1] === '0' ){
+            console.log(`${decimal[newNumber[0]]}`);
+            console.log('one');
+          }else{
+           // console.log(`${decimal[newNumber[0]]} ${num[newNumber[1]]}`)
+            console.log('two');
+          }
+       
         }
 
-        if ( numberLength === 3 ){
+       // if ( numberLength === 3 ){
+         // str = decimal[number];
+         // console.log(str);
+        //}
+
+      //  if ( numberLength === 4 ){
             
-        }
-
-        if ( numberLength === 4 ){
-            
-        }
+      //  }
 
 
 }
 
 
-toReadable(11);
+toReadable(20);
